@@ -1,0 +1,17 @@
+.icon {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.github-icon {
+  background-image: url("/assets/github-mark.svg");
+}
+
+.linkedin-icon {
+  background-image: url("/assets/LI-In-Bug.png");
+}

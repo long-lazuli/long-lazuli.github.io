@@ -10,13 +10,12 @@
   <script src="/lang.js"></script>
 
   <script>
-    // URLs cibles
-    const URL_FR = "fr/";
-    const URL_EN = "en/";
+    const URL_FR = "https://www.malt.fr/profile/yannicks";
+    const URL_EN = "https://app.usebraintrust.com/talent/1966597/";
     redirectAccordingToLang({
       fr: URL_FR,
       default: URL_EN,
-    })
+    }, false)
   </script>
 </head>
 
@@ -25,6 +24,7 @@
 
   <nav>
     <a class="absolute-link skip-to-content" href="#main-content">Skip to content</a>
+    <a class="absolute-link go-home" href="/"><span aria-hidden="true">🏠</span> Back to homepage</a>
   </nav>
 
   <main class="page" id="main-content">
@@ -46,9 +46,13 @@
         <p>Please choose your destination:</p>
       </noscript>
 
+
       <ul>
-        <li><a href="en/" lang="en">Homepage in English</a></li>
-        <li><a href="fr/" lang="fr">Page d'accueil en français</a></li>
+        <li-group>
+          <li><a href="https://www.malt.fr/profile/yannicks" lang="fr">Malt</a></li>
+          <li><a href="https://app.usebraintrust.com/talent/1966597/" lang="en">Braintrust (English)</a></li>
+        </li-group>
+        <li><a href="/resume">Check my resume</a></li>
       </ul>
 
     </section>

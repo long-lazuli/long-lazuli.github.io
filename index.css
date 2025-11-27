@@ -1,0 +1,215 @@
+:root {
+    --title-blue: #095692;
+    --accent-purple: #700696;
+    --accent-orange: #E35E00;
+    --accent-green: #D2E000;
+    --text-main: #000;
+    --text-muted: #333;
+    --page-max: 210mm;
+    --side-pad: 16mm;
+    --line-height: 1.45;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    line-height: var(--line-height);
+    color: var(--text-main);
+    font-size: 80%;
+    /* browsers default ~16px but defined proportionally */
+    background: #CCC;
+}
+
+body {
+    background: #fff;
+    width: 100%;
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--title-blue);
+    /* text-shadow: 1px 1px 2px var(--accent-green); */
+    text-decoration: none;
+}
+a:visited {
+    color: var(--accent-purple);
+}
+a:hover, a:active, a:focus {
+    color: var(--text-main);
+    text-shadow: 1px 1px 2px var(--accent-green);
+}
+a[lang]::after {
+    opacity: 0.6;
+}
+
+html[lang="fr"] li:has(a[lang="fr"]),
+html[lang="en"] li:has(a[lang="en"]) {
+    order: -1;
+}
+html[lang="en"] main a[lang="fr"]::after {
+    content: " (French)";
+}
+html[lang="fr"] main a[lang="en"]::after {
+    content: " (Anglais)";
+}
+
+
+li-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+.page {
+    padding: 15mm var(--side-pad) 20mm;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.top-bar {
+    height: 3mm;
+    background: linear-gradient(90deg,
+            var(--accent-purple),
+            var(--accent-orange));
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-weight: 700;
+    line-height: calc(var(--line-height) * 1.5);
+    margin-top: 0.5rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+    color: var(--text-main);
+}
+
+.company-name {
+    font-weight: 700;
+
+    color: var(--text-main);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--title-blue);
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+.subtitle:empty::after {
+    content: "\A0";
+}
+
+h2.section-title {
+    font-size: 1.15rem;
+    color: var(--title-blue);
+}
+
+p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+p+p {
+    margin-top: 0.5rem;
+}
+
+
+.experience-title {
+    line-height: calc(var(--line-height) * 1.25);
+    margin-top: 0.25rem;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--title-blue);
+}
+
+.separator {
+    color: var(--accent-green);
+}
+
+.meta-inline {
+    font-size: 1rem;
+}
+
+
+.absolute-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5em 1em;
+    background: #fff;
+    border-radius: .5rem;
+    color: #000;
+    font-weight: 700;
+    z-index: 10000;
+
+    width: fit-content;
+    margin: .25rem .375rem auto;
+}
+
+.skip-to-content {
+    margin-right: .375rem;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+}
+
+.skip-to-content:focus,
+.skip-to-content:active {
+    transform: translateY(0);
+    /* outline: 2px solid #000; */
+}
+
+.go-home {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.switch-language {
+    margin-left: auto;
+}
+
+
+@media print {
+
+    html,
+    body {
+        background: #fff;
+    }
+    .page {
+        padding-top: 10mm;
+        padding-bottom: 15mm;
+    }
+
+    .top-bar {
+        width: 100%;
+    }
+
+    .absolute-link {
+        display: none;
+    }
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <link href="/index.css" rel="stylesheet" />
+    <script src="/lang.js"></script>
+
+    <script>
+        // URLs cibles
+        const URL_FR = "fr/";
+        const URL_EN = "en/";
+        redirectAccordingToLang({
+            fr: URL_FR,
+            default: URL_EN,
+        })
+    </script>
+</head>
+
+<body>
+    <div class="top-bar"></div>
+
+    <nav>
+        <a class="absolute-link skip-to-content" href="#main-content">Skip to content</a>
+        <a class="absolute-link go-home" href="/"><span aria-hidden="true">🏠</span> Back to homepage</a>
+    </nav>
+
+    <main class="page" id="main-content">
+
+        <header>
+            <h1>Redirecting…</h1>
+        </header>
+
+        <section>
+
+            <script>
+                document.write([
+                    "<p>Your browser should redirect you automatically based on your language.</p>",
+                    "<p>If nothing happens, choose a destination:</p>"
+                ].join("\n"));
+            </script>
+
+            <noscript>
+                <p>Please choose your destination:</p>
+            </noscript>
+
+            <ul>
+                <li><a href="en/" lang="en">Resume in English</a></li>
+                <li><a href="fr/" lang="fr">CV en français</a></li>
+            </ul>
+
+        </section>
+    </main>
+</body>
+
+</html>
