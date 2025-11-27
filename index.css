@@ -53,10 +53,6 @@ a[lang]::after {
     opacity: 0.6;
 }
 
-html[lang="fr"] li:has(a[lang="fr"]),
-html[lang="en"] li:has(a[lang="en"]) {
-    order: -1;
-}
 html[lang="en"] main a[lang="fr"]::after {
     content: " (French)";
 }
