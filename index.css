@@ -4,7 +4,8 @@
     --accent-orange: #E35E00;
     --accent-green: #D2E000;
     --text-main: #000;
-    --text-muted: #333;
+    --text-faded: #333;
+    --text-muted: #666;
     --page-max: 210mm;
     --side-pad: 16mm;
     --line-height: 1.45;
@@ -35,6 +36,10 @@ body {
     padding: 0;
     position: relative;
     min-height: 100vh;
+}
+
+summary {
+  cursor: pointer;
 }
 
 a {
@@ -103,7 +108,6 @@ h1 {
 
 .company-name {
     font-weight: 700;
-
     color: var(--text-main);
 }
 
@@ -112,20 +116,46 @@ h1 {
     color: var(--title-blue);
     font-weight: 700;
     margin-bottom: 1em;
+    /* text-align: center; */
 }
 .subtitle:empty::after {
     content: "\A0";
 }
 
-h2.section-title {
+section, .ats-section {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+
+.section-title {
     font-size: 1.15rem;
     color: var(--title-blue);
+    font-weight: 700;
+    margin-top: 1.25rem;
+    line-height: 1.5;
+}
+.section-title > em {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    color: var(--text-faded);
+}
+.ats-section:not([open]) .section-title {
+    color: var(--text-faded);
+}
+.ats-section:not([open]) .section-title > em {
+    color: var(--title-muted);
+}
+
+.section-title ~ * {
+    margin-left: 1ch;
 }
 
 p {
     margin: 0;
     font-size: 1rem;
-    color: var(--text-muted);
+    color: var(--text-faded);
 }
 
 p+p {
@@ -204,8 +234,10 @@ p+p {
         width: 100%;
     }
 
-    .absolute-link {
+    .absolute-link,
+    .ats-section {
         display: none;
     }
+
 }
 
