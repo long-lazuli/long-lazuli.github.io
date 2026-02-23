@@ -152,6 +152,13 @@ section, .ats-section {
     margin-left: 1ch;
 }
 
+.free-text-section p:first-child {
+    margin-top: 1.25rem;
+}
+.free-text-section p {
+    margin-left: 1ch;
+}
+
 p {
     margin: 0;
     font-size: 1rem;
