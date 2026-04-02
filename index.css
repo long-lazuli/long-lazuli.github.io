@@ -28,6 +28,20 @@ body {
     background: #CCC;
 }
 
+.util-switch {
+    position: absolute;
+    opacity: 0;
+    /* pointer-events: none; */
+}
+
+.switch-font-size { display: none; }
+#fontSize80:checked ~ nav .switch-font-size[for="fontSize100"],
+#fontSize100:checked ~ nav .switch-font-size[for="fontSize120"],
+#fontSize120:checked ~ nav .switch-font-size[for="fontSize80"] {
+    display: block;
+    cursor: pointer;
+}
+
 body {
     background: #fff;
     width: 100%;
@@ -37,6 +51,11 @@ body {
     position: relative;
     min-height: 100vh;
 }
+
+#fontSize80:checked ~ main { font-size: .8em; }
+#fontSize100:checked ~ main { font-size: 1em; }
+#fontSize120:checked ~ main { font-size: 1.2em; }
+
 
 summary {
   cursor: pointer;
@@ -243,7 +262,7 @@ p+p {
 
     .absolute-link,
     .ats-section {
-        display: none;
+        display: none !important;
     }
 
 }

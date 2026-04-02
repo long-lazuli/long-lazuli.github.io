@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>CV — Yannick Schetrite | Ingénieur Frontend Senior (React • TypeScript • Accessibilité)</title>
+  <title>Yannick Schetrite | Ingénieur Frontend Senior (React • TypeScript • Accessibilité)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="/index.css" rel="stylesheet" />
+  <link href="../../index.css" rel="stylesheet" />
   <link rel="icon" href="/assets/favicon.png" type="image/png">
 </head>
 
 <body>
+  <input name="fontSize" type="radio" class="util-switch" id="fontSize80" checked/>
+  <input name="fontSize" type="radio" class="util-switch" id="fontSize100" />
+  <input name="fontSize" type="radio" class="util-switch" id="fontSize120" />
+
   <div class="top-bar"></div>
 
   <nav>
@@ -19,6 +23,10 @@
       English
       <span aria-hidden="true" class="lang-icon">🌐</span>
     </a>
+
+    <label class="absolute-link switch-font-size" for="fontSize80">80%</label>
+    <label class="absolute-link switch-font-size" for="fontSize100">100%</label>
+    <label class="absolute-link switch-font-size" for="fontSize120">120%</label>
   </nav>
 
   <main class="page" id="main-content">
